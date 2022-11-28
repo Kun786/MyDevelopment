@@ -1,0 +1,87 @@
+
+.one, .two, .three {
+  display: table !important;
+}
+
+.card{
+    box-sizing: border-box;
+    float: left;
+    height: 10em;
+    margin: .5em;
+    padding: 1em;
+    position: relative;
+    width: 20em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.one h1 {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 700;
+  font-family: 'Anton', sans-serif;
+}
+.two .container, .three .container{
+    display: table-cell;
+}
+.two h2{
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'Anton', sans-serif;
+}
+
+.two .card {
+  background-color: rgb(242, 199, 68);
+}
+.two .container{
+  flex-direction: column;
+}
+.three .card{
+    background-color: #202020;
+    color: white;
+    border: 1px solid white;
+}
+.four .col-lg-6{
+  flex-direction: column;
+}
+.progress {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  border-radius: 0 !important;
+}
+
+.progress:before {
+  animation: slideIn 2s ease-out;
+  background-color: rgb(242, 199, 68);
+  bottom: 0;
+  left: 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.content {
+  position: relative;
+}
+
+.percentage {
+  text-align: right;
+}
+
+@keyframes slideIn {
+  0% {
+    background-color: rgb(242, 199, 68);
+    width: 0;
+  }
+
+  100% {
+    background-color: rgb(242, 199, 68);
+    width: 100%;
+  }
+}
