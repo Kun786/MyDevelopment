@@ -8,11 +8,17 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  public toggleActive:Boolean = false;
+  public toggleOpen:Boolean = false;
+
+  constructor() { }
 
   ngOnInit(): void {
   }
-  onClickButton(slug:any){
-    this.router.navigate([slug]); 
+
+  public showNavHeader() {
+    this.toggleActive = !this.toggleActive;
+    this.toggleOpen = !this.toggleOpen;
   }
+
 }

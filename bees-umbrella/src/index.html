@@ -1,67 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Frontend</title>
-    <base href="/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <!-- CSS only -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <app-root></app-root>
-  </body>
-  <!-- JavaScript Bundle with Popper -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
-    integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
-    crossorigin="anonymous"
-  ></script>
-  <script>
-    var one = "#F2C744",
-      two = "#202020",
-      three = "#fff",
-      four = "#F2C744",
-      five = "#202020";
 
-    $(window).on("scroll touchmove", function () {
-      if ($(document).scrollTop() >= $("#one").position().top) {
-        $("body").css("background", $("#one").attr("data-color"));
-        $("body").css("color", $("#two").attr("data-color"));
-      }
-      if ($(document).scrollTop() > $("#two").position().top) {
-        $("body").css("background", $("#two").attr("data-color"));
-        $("body").css("color", $("#three").attr("data-color"));
-      }
-      if ($(document).scrollTop() > $("#three").position().top) {
-        $("body").css("background", $("#three").attr("data-color"));
-        $("body").css("color", $("#two").attr("data-color"));
-      }
-      if ($(document).scrollTop() > $("#four").position().top) {
-        $("body").css("background", $("#four").attr("data-color"));
-        $("body").css("color", $("#two").attr("data-color"));
-      }
-      if ($(document).scrollTop() >= $("#five").position().top) {
-        $("body").css("background", $("#five").attr("data-color"));
-        $("body").css("color", $("#three").attr("data-color"));
-      }
-    });
-  </script>
+<head>
+  <meta charset="utf-8" />
+  <title>Bees Umbrella</title>
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <app-root></app-root>
+</body>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </html>
