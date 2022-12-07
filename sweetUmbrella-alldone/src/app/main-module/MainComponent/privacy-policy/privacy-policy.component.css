@@ -1,0 +1,15 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap'); */
+
+*{
+    font-family: Merriweather;
+}
+.h-color{
+    background: #000000;
+background: linear-gradient(to right, #000000 0%, #FF7F04 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-size:70px;
+font-weight: bolder;
+
+}

@@ -1,0 +1,82 @@
+*{
+    font-family: Merriweather ;
+}
+
+.approach-h2{
+    color:rgb(255, 87, 51)
+}
+.LC{
+    background-color: rgb(255, 87, 51);
+    color: white;
+}
+.PU{
+    background-color: rgb(255, 87, 51);
+    color: white;
+}
+.fonts{
+    font-size: 70px;
+}
+#header{
+    background-image:linear-gradient(to bottom, rgba(9, 30, 62, .7),  rgba(9, 30, 62, .7)), url(../../../../assets/start.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 875px;
+}
+.carousel-inner h1{
+    font-size: 60px;
+    font-family: var(--lg-font);
+}
+
+.carousel-item .btn:hover{
+    border-color: var(--pink)!important;
+}
+@media (min-width: 991.98px) {
+    .facts {
+        position: relative;
+        margin-top: -100px;
+        z-index: 1;
+    }
+}
+
+.btn {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    transition: .5s;
+    color: rgb(233, 116, 81);
+    background-color: white;
+}
+.interest{
+    background-color: rgb(233, 116, 81);
+    height: 70vh;
+}
+
+
+.interest-div{
+    height: 60vh;
+}
+h3{
+    color:rgb(233, 116, 81);
+}
+
+.hrcolor{
+    background-color: #FF5733;
+    height: 5px;
+    
+}
+
+/* calculator start */
+.calc{
+    background-color:rgb(233, 116, 81) ;
+}
+.headingcolor{
+    color:rgb(233, 116, 81)  ;
+}
+.calcbtn{
+    border-color: #FF5733;
+}
+.calcbtn:hover{
+    background-color: #FF5733;
+    color:white;
+}
+/* calculator end */

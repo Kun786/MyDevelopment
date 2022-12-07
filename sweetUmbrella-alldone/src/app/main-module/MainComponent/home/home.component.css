@@ -1,0 +1,232 @@
+:root {
+    
+    --primary: #06A3DA;
+    --secondary: #34AD54;
+    --light: #EEF9FF;
+    --dark: #091E3E;
+}
+
+
+*{
+    font-family: Merriweather ;
+}
+/*** Button ***/
+.nav-video{
+    /* width: 100; */
+    height:800px ;
+}
+.btn {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    transition: .5s;
+    background-color: rgb(233, 116, 81);
+}
+
+.myButton:hover{
+    background-color: rgb(255, 87, 51);
+}
+
+.bg-warning{
+    background-color: rgb(233, 116, 81);
+}
+
+.bg-warning:hover{
+    background-color: rgb(255, 87, 51);
+}
+
+.btn-primary,
+.btn-secondary {
+    color: #FFFFFF;
+    box-shadow: inset 0 0 0 50px transparent;
+}
+
+.btn-primary:hover {
+    box-shadow: inset 0 0 0 0 var(--primary);
+}
+
+.btn-secondary:hover {
+    box-shadow: inset 0 0 0 0 var(--secondary);
+}
+
+.btn-square {
+    width: 36px;
+    height: 36px;
+}
+
+.btn-sm-square {
+    width: 30px;
+    height: 30px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+}
+
+
+/*** Carousel ***/
+.carousel-caption {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(9, 30, 62, .7);
+    /* z-index: 1; */
+}
+
+@media (max-width: 576px) {
+    .carousel-caption h5 {
+        font-size: 14px;
+        font-weight: 500 !important;
+    }
+
+    .carousel-caption h1 {
+        font-size: 30px;
+        font-weight: 600 !important;
+    }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* facts card color */
+.factscolor{
+    background-color:rgb(255, 87, 51) ;
+}
+
+
+/* header */
+/* #header{
+    background: url(../../../../assets/homeimC.jpg)  top/cover no-repeat;
+} */
+/* .carousel-inner h1{
+    font-size: 60px;
+    font-family: var(--lg-font);
+} 
+
+ .carousel-item .btn:hover{
+    border-color: var(--pink)!important;
+}  */
+.btn1{
+    margin: -4px;
+    background-color:rgb(233, 116, 81);
+}
+
+.btn2{
+    background-color: black;
+}
+@media (min-width: 991.98px) {
+    .facts {
+        position: relative;
+        margin-top: -50px;
+        z-index: 1;
+        /* transform: translate(120px,0px); */
+    }
+}
+
+
+/* about us  */
+.about-us{
+    background-color: rgb(220,237,242);
+}
+.about-heading{
+    line-height: inherit;
+}
+/* about us  */
+
+/* workwithus */
+.workWithUs{
+    background-color: rgb(233, 116, 81);
+
+}
+/* workwithus */
+
+
+/* services  */
+.service{
+    color: rgb(233, 116, 81);
+}
+.service-p{
+    color: rgb(139,139,139);
+    font-size: 16.5;
+    line-height: 25px;
+}
+.learnMore{
+    background-color:rgb(233, 116, 81);    
+}
+/* services  */
+
+
+/* faq  */
+.faq{
+    background-color: rgb(233, 116, 81);
+}
+.faq-h5{
+    color: black;
+}
+.faq-h3{
+    line-height: inherit;
+    color: black;
+}
+.faq-p{
+    color: white;
+}
+
+
+/* form  */
+.formCol-1{
+    background-color: rgb(233, 116, 81);
+    
+}
+.section-border{
+display: block;
+border-radius: 30px 0 0 30px;
+}
+
+
+
+.formCol-2{
+    background-color: #D4D3D3;
+border-radius:0 30px 30px 0;
+
+}
+.btn-text{
+    color: rgb(233, 116, 81);
+
+}
+.btn-text:hover{
+    color:black;
+    
+}
+.btn-2{
+    background-color:black;
+    
+}
+.btn-submit{
+    border-radius: 10px;
+}
+/* form  */
+
+
+.row-bg{
+    background-color:  rgb(233, 116, 81);
+    /* display: block; */
+    border-radius: 30px 0 0 30px;
+
+}
