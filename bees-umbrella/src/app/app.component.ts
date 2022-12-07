@@ -1,5 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { event } from 'jquery';
+import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { backgroundColors } from './Shared/background-colors-enum';
 @Component({
   selector: 'app-root',
@@ -7,46 +6,52 @@ import { backgroundColors } from './Shared/background-colors-enum';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  @ViewChild('One') One:ElementRef | any;
+  @ViewChild('Two') Two:ElementRef | any;
+  @ViewChild('Three') Three:ElementRef | any;
+  @ViewChild('Four') Four:ElementRef | any;
   public backgroundColor: string = '';
-  @HostListener('window:scroll', ['$event']) onScrollEvent() {
-    const yAxisValue = window.pageYOffset;
-    switch (true) {
-      case yAxisValue === 0:
-        this.backgroundColor = backgroundColors.One;
-        console.log(this.backgroundColor,yAxisValue);
-        break;
-      case yAxisValue >= 500:
-        this.backgroundColor = backgroundColors.Two;
-        console.log(this.backgroundColor,yAxisValue);
-        break;
-      case yAxisValue >= 1500:
-        this.backgroundColor = 'red';
-        console.log(this.backgroundColor,yAxisValue);
-        break;
-      case yAxisValue >= 2500:
-        this.backgroundColor = 'green';
-        console.log(this.backgroundColor,yAxisValue);
-        break;
+  @HostListener('window:scroll') onWindowScroll() {
+    const scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const max = document.documentElement.clientHeight;
+    console.log(max)
+    // switch (true) {
+    //   case scroll < max || scroll === 0:
+    //     this.backgroundColor = backgroundColors.One;
+    //     break;
+    //   case scroll >= max:
+    //     this.backgroundColor = backgroundColors.Two;
+    //     break;
+    // }
+    if(scroll === 0){
+      this.backgroundColor = backgroundColors.One;
     }
-    // if(yAxisValue === 0){
-    //   this.backgroundColor = backgroundColors.One;
-    // }
-    // if (yAxisValue > 500) {
-    //   this.backgroundColor = backgroundColors.Two;
-    // }
-    // if (yAxisValue > 1500) {
-    //   this.backgroundColor = backgroundColors.Three;
-    // }
-    // if (yAxisValue > 2500) {
-    //   this.backgroundColor = backgroundColors.Four;
-    // }
-    // if (yAxisValue > 3500) {
-    //   this.backgroundColor = backgroundColors.Five;
-    // }
+    if (scroll > 500) {
+      this.backgroundColor = backgroundColors.Two;
+    }
+    if (scroll > 1500) {
+      this.backgroundColor = backgroundColors.Three;
+    }
+    if (scroll > 2500) {
+      this.backgroundColor = backgroundColors.Four;
+    }
+    if (scroll > 3500) {
+      this.backgroundColor = backgroundColors.Five;
+    }
   }
+  // @HostListener('window:scroll', ['$event']) onWindowScroll(e:any) {
+  //   var target = e.target || e.srcElement || e.currentTarget;
+  //   console.log(target.attributes.id);
+  //   // Your Code Here
+
+  // }
   constructor() { }
 
   ngOnInit(): void {
 
+  }
+
+  ngAfterViewInit(): void {
+    console.log(this.One)
   }
 }
