@@ -1,0 +1,13 @@
+.navbar {
+    width: 100%;
+    background-color: transparent !important;
+    color: white;
+  }
+  
+  .navbar a {
+    color: white;
+  }
+  
+  li a.active{
+    border-bottom: 1px solid white;
+  }
