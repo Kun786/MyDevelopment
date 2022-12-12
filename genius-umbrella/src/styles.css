@@ -2,6 +2,20 @@
 .active {
     border-bottom: 1px solid white;
 }
+
 a:hover {
     cursor: pointer;
+}
+
+* {
+    font-family: 'Londrina Shadow', cursive;
+    font-family: 'Martian Mono', monospace;
+}
+
+.color{
+    color:#51B1BF
+}
+
+.myText{
+    text-align: justify;
 }
