@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-.active{
-    background: 'white'
-}
+li a.active{
+    border-bottom: 1px solid white;
+  }
+  
 a:hover{
     cursor: pointer;
 }
