@@ -1,0 +1,19 @@
+<VirtualHost *:443>
+        ServerName skillstitute.com
+        ServerAlias www.skillstitute.com
+        ServerAdmin web@localhost
+        DocumentRoot /var/www/html
+        LogLevel debug  ssl:info
+        SSLEngine on
+        SSLCertificateFile /etc/apache2/ssl/fazi.crt
+        SSLCertificateKeyFile /etc/apache2/ssl/fazi.key
+        SSLVerifyClient require
+        SSLVerifyDepth 1
+        SSLCACertificateFile /etc/apache2/ca/origin-pull-ca.pem
+        SSLProxyEngine on
+        ProxyPass "/" "http://127.0.0.1:8088/"
+        ProxyPassReverse "/" "http://127.0.0.1:8088/"
+        SSLProxyCACertificateFile /etc/apache2/ca/origin-pull-ca.pem
+        ErrorLog ${APACHE_LOG_DIR}/test_error_https.log
+        CustomLog ${APACHE_LOG_DIR}/test_access_https.log combined
+</VirtualHost>

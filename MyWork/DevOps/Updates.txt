@@ -1,0 +1,35 @@
+Postman:   fazi@ScriptOne:~/Desktop$ sudo snap install postman
+
+QbitTorrent: # qBittorrent Stable
+  sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
+
+  # or qBittorrent Unstable
+  sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable
+  Then install qBittorrent by doing this:
+
+  sudo apt-get update && sudo apt-get install qbittorrent
+  
+  
+  How to update the system
+sudo apt-get update && sudo apt-get upgrade -y
+
+
+sudo apt-get install p7zip-full p7zip-rar 
+
+df -h (to check the free space)
+
+
+to uzinp files successfully sudo apt-get install unrar
+
+sudo apt-get install htop (To see TaskManager)
+
+
+So how to install and update your nvidia driver.
+To check graphics card info
+ step1 :  check the installed drivers by using this command lspci -k | grep -A 2 -i "VGA"
+ step2 : check the recommendtion by ubuntu for drivers using this command sudo ubuntu-drivers devices
+ step3 : sudo apt purge  nvidia-driver-460 (Delete the old driver)
+ step4 : Install the new driver using additional driver
+ step5 :sudo apt-get install nvidia-driver-470
+
+https://www.linuxbabe.com/desktop-linux/switch-intel-nvidia-graphics-card-ubuntu

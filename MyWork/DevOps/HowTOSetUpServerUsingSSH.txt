@@ -1,0 +1,71 @@
+1 First create Key
+    ssh-keygen -t ed25519
+    ssh-keygen -t ed25519 -C "PromiseFitnessAppPublicKey"
+    
+2 Create/nano config file and add new Host
+
+3 Now add user into server and disable the root user for security purpose
+    
+    Commands
+    adduser 'username'
+    
+    it will ask you the password so add password and then keep on pressing enter and it will created in cd/home
+    
+4 Once user is added now change it in to sudo group
+
+   Commands
+   root@ubuntu-s-1vcpu-1gb-nyc1-01:/home/fazi# usermod -aG sudo fazi
+   root@ubuntu-s-1vcpu-1gb-nyc1-01:/home/fazi# id fazi
+   uid=1000(fazi) gid=1000(fazi) groups=1000(fazi),27(sudo)
+
+
+5 after that login to newly created user
+  
+  Commands
+  root@ubuntu-s-1vcpu-1gb-nyc1-01:/home/fazi# sudo su - fazi  #su = switch user
+
+6 Now create a directory .ssh in the home of new user
+
+  Commands
+  
+  fazi@ubuntu-s-1vcpu-1gb-nyc1-01:~$ mkdir .ssh
+
+  
+  
+  drwxr-xr-x 3 fazi fazi 4096 May 11 20:15 .
+  drwxr-xr-x 3 root root 4096 May 11 20:08 ..
+  -rw-r--r-- 1 fazi fazi  220 May 11 20:08 .bash_logout
+  -rw-r--r-- 1 fazi fazi 3771 May 11 20:08 .bashrc
+  -rw-r--r-- 1 fazi fazi    0 May 11 20:08 .cloud-locale-test.skip
+  -rw-r--r-- 1 fazi fazi  807 May 11 20:08 .profile
+  drwxrwxr-x 2 fazi fazi 4096 May 11 20:15 .ssh
+  fazi@ubuntu-s-1vcpu-1gb-nyc1-01:~$ chmod 700 ~/.ssh/
+  fazi@ubuntu-s-1vcpu-1gb-nyc1-01:~$ ls -la
+  total 24
+  drwxr-xr-x 3 fazi fazi 4096 May 11 20:15 .
+  drwxr-xr-x 3 root root 4096 May 11 20:08 ..
+  -rw-r--r-- 1 fazi fazi  220 May 11 20:08 .bash_logout
+  -rw-r--r-- 1 fazi fazi 3771 May 11 20:08 .bashrc
+  -rw-r--r-- 1 fazi fazi    0 May 11 20:08 .cloud-locale-test.skip
+  -rw-r--r-- 1 fazi fazi  807 May 11 20:08 .profile
+  drwx------ 2 fazi fazi 4096 May 11 20:15 .ssh
+  
+  
+  
+7 Hardening the server
+	
+	Commands
+	sudo nano /ect/ssh/sshd_config
+	change PasswordAuthentaction = no
+	chnage PermitRootLogin = no 
+	and then save it.
+	
+	After that run the command to reload the sshd sudo systemctl reload sshd
+	
+	
+8 Now Install nodejs on your server
+ 
+  Commands
+  curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+  sudo apt-get install -y nodejs
+
