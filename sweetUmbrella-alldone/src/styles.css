@@ -30,4 +30,8 @@ a {
   border: 2px solid green;
   }
   
+  .uk-flag{
+    width: 25px;
+    height: 25px;
+  }
     /* input validation code */

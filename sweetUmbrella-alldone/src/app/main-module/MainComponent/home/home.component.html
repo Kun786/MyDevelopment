@@ -452,14 +452,17 @@
                         </div>
                         <div class="col-md-6 py-3">
                             <div class="mb-3">
-                                <label for="" class="form-label">Last Name *</label>
-                                <input type="text" class="form-control rounded-pill" placeholder="Last Name"
-                                    formControlName="lastName">
+                                <label for="" class="form-label">Phone *</label><br>
+                                <img src="../../../../assets/uk.png" class="uk-flag d-inline mx-1">
+                                <input type="tel" class="form-control rounded-pill w-75 d-inline" placeholder="Phone Number"
+                                    formControlName="phone">
                                 <div class="error  text-danger"
-                                    *ngIf="formModel.controls['lastName'].invalid && (formModel.controls['lastName'].dirty || formModel.controls['lastName'].touched)">
-                                    <span *ngIf="(formModel.controls['lastName'].errors.pattern)">
-                                        Only Alphabest Allowed !!</span>
-                                    <span *ngIf="formModel.controls['lastName'].errors.required">
+                                    *ngIf="formModel.controls['phone'].invalid && (formModel.controls['phone'].dirty || formModel.controls['phone'].touched)">
+                                    <span *ngIf="(formModel.controls['phone'].errors.pattern)">
+                                        Phone Number should be numeric</span>
+                                        <span *ngIf="formModel.controls['phone'].errors.minlength || formModel.controls['phone'].errors.maxlength ">
+                                            <small>Phone number must be at least 10 numbers</small></span>
+                                    <span *ngIf="formModel.controls['phone'].errors.required">
                                         <small>Field Required!</small>
                                     </span>
                                 </div>

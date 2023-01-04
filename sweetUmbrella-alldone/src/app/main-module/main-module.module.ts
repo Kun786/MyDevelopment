@@ -18,7 +18,6 @@ import { TermsComponent } from './MainComponent/terms/terms.component';
 import { ModernSlaveryComponent } from './MainComponent/modern-slavery/modern-slavery.component';
 import { PrivacyPolicyComponent } from './MainComponent/privacy-policy/privacy-policy.component';
 
-
 @NgModule({
   declarations: [
     MainModuleComponent,

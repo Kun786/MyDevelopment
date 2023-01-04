@@ -41,22 +41,83 @@
       </div>
       <div class="social-media">
         <p>Connect with us :</p>
-        <div class="social-icons"> <a
-            href="https://twitter.com/Sweett_umbrella" target="_blank"> <i class="fa fa-twitter"></i> </a> <a
-            href="https://instagram.com/sweett_umbrella?igshid=YmMyMTA2M2Y=" target="_blank"> <i
-              class="fa fa-instagram"></i> </a> <a> <i class="fa fa-linkedin"></i> </a> </div>
+        <div class="social-icons"> <a href="https://twitter.com/Sweett_umbrella" target="_blank"> <i
+              class="fa fa-twitter"></i> </a> <a href="https://instagram.com/sweett_umbrella?igshid=YmMyMTA2M2Y="
+            target="_blank"> <i class="fa fa-instagram"></i> </a> <a> <i class="fa fa-linkedin"></i> </a> </div>
       </div>
     </div>
     <div class="contact-info-form"> <span class="circle one"></span> <span class="circle two"></span>
-      <form >
+      <form [formGroup]="formModel" (ngSubmit)="submitForm()">
         <h3 class="title">Contact us</h3>
-        <div class="social-input-containers"> <input type="text" name="name" class="input" placeholder="Name" /> </div>
-        <div class="social-input-containers"> <input type="email" name="email" class="input" placeholder="Email" />
+        <div class="social-input-containers">
+          <input type="text" name="name" class="input" placeholder="Name" formControlName="firstName" />
         </div>
-        <div class="social-input-containers"> <input type="tel" name="phone" class="input" placeholder="Phone" /> </div>
-        <div class="social-input-containers textarea"> <textarea name="message" class="input"
-            placeholder="Message"></textarea> </div>
-        <input type="submit" value="Send" class="btn btn-outline-light w-100" />
+        <span>
+          <div class="error  text-light"
+            *ngIf="formModel.controls['firstName'].invalid && (formModel.controls['firstName'].dirty || formModel.controls['firstName'].touched)">
+            <span *ngIf="(formModel.controls['firstName'].errors.pattern)">
+              Only Alphabest Allowed !!</span>
+            <span *ngIf="formModel.controls['firstName'].errors.required">
+              <small>Field Required!</small>
+            </span>
+          </div>
+        </span>
+        <div class="social-input-containers">
+          <input type="email" name="email" class="input" placeholder="Email" formControlName="emailAddress" />
+        </div>
+        <span>
+          <div class="error  text-light"
+            *ngIf="formModel.controls['emailAddress'].invalid && (formModel.controls['emailAddress'].dirty || formModel.controls['emailAddress'].touched)">
+            <span *ngIf="formModel.controls['emailAddress'].errors.email">
+              <small>Use correct pattern as example@example.com</small></span>
+            <span *ngIf="formModel.controls['emailAddress'].errors.required">
+              <small>Field Required!</small>
+            </span>
+          </div>
+        </span>
+        <div class="social-input-containers">
+          <input type="text" name="subject" class="input" placeholder="Subject" formControlName="subject" />
+        </div>
+        <span>
+          <div class="error  text-light"
+            *ngIf="formModel.controls['subject'].invalid && (formModel.controls['subject'].dirty || formModel.controls['subject'].touched)">
+            <span *ngIf="formModel.controls['subject'].errors.maxlength ">
+              <small>Subject should not more than 20 characters</small></span>
+            <span *ngIf="formModel.controls['subject'].errors.required">
+              <small>Field Required!</small>
+            </span>
+          </div>
+        </span>
+        <div class="social-input-containers d-flex">
+          <img src="../../../../assets/uk.png" class="uk-flag mx-1 my-2">
+          <input type="tel" name="phone" class="input" placeholder="Phone" formControlName="phone" />
+        </div>
+        <span>
+          <div class="error  text-light"
+            *ngIf="formModel.controls['phone'].invalid && (formModel.controls['phone'].dirty || formModel.controls['phone'].touched)">
+            <span *ngIf="(formModel.controls['phone'].errors.pattern)">
+              Phone Number should be numeric</span>
+            <span *ngIf="formModel.controls['phone'].errors.minlength || formModel.controls['phone'].errors.maxlength ">
+              <small>Phone number must be at least 10 numbers</small></span>
+            <span *ngIf="formModel.controls['phone'].errors.required">
+              <small>Field Required!</small>
+            </span>
+          </div>
+        </span>
+        <div class="social-input-containers textarea">
+          <textarea name="message" class="input" placeholder="Message" formControlName="message"></textarea>
+        </div>
+        <span>
+          <div class="error  text-light"
+            *ngIf="formModel.controls['message'].invalid && (formModel.controls['message'].dirty || formModel.controls['message'].touched)">
+            <span *ngIf="formModel.controls['message'].errors.maxlength ">
+              <small>Message should not more than 500 characters</small></span>
+            <span *ngIf="formModel.controls['subject'].errors.required">
+              <small>Field Required!</small>
+            </span>
+          </div>
+        </span>
+        <input type="submit" [disabled]="formModel.pristine || formModel.invalid" class="btn btn-outline-light w-100" />
       </form>
     </div>
   </div>
