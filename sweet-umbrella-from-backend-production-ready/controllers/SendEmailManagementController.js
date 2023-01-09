@@ -1,4 +1,4 @@
-const sendEmailUsingNodeMailer = require('../miscellaneousFiles/SendEmailForPasswordReset');
+const sendEmailUsingNodeMailer = require('../miscellaneousFiles/SendClientEmail');
 
 const sendEmail = async (req,res) => {
     try {

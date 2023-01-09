@@ -36,6 +36,14 @@ app.all('*', (req, res, next) => {
 app.use(express.static(path.join(__dirname,'/frontend-lms')));
 //*****UsingRoutes*****//
 
+//Start Block Load Routes
+//LoadingRoutes in Variable
+const sendEmailManagementRoute = require('./routes/SendEmailManagementRoute');
+//LoadingRoutes in Variable
+
+//UsingRoutes
+app.use('/emailManagement',sendEmailManagementRoute);
+//UsingRoutes
 
 //End Block Accessing The Routes in the Entry Point
 
