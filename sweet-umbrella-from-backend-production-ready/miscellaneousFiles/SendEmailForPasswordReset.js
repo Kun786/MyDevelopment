@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-const SendEmailUsingNodeMailer = async (_Email, _Link, _CredentialsObject) => {
+const SendEmailUsingNodeMailer = async (payLoad) => {
   try {
     // Generate test SMTP service account from ethereal.email
     // Only needed if you don't have a real mail account for testing
@@ -8,14 +8,14 @@ const SendEmailUsingNodeMailer = async (_Email, _Link, _CredentialsObject) => {
     const _SmtpService = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'itismyworkspace@gmail.com', // generated ethereal user
-        pass: 'mitlndcbonnoffev', // generated ethereal password
+        user: 'hello@sweetumbrella.co.uk', // generated ethereal user
+        pass: 'Jrj3@gqpq', // generated ethereal password
       },
     });
     //Email Object
 
     const _EmailObject = {
-      from: 'itismyworkspace@gmail.com', // sender address
+      from: payLoad.email, // sender address
       to: _Email, // list of receivers
       subject: "Skillstitute", // Subject linea
       html: `<b>
