@@ -2,7 +2,6 @@ const nodemailer = require("nodemailer");
 
 const senEmail = async (payLoad) => {
   try {
-    console.log(process.env.APPPASSWORDFOREMAIL)
     // Generate test SMTP service account from ethereal.email
     // Only needed if you don't have a real mail account for testing
     // create reusable transporter object using the default SMTP transport
@@ -33,8 +32,8 @@ const senEmail = async (payLoad) => {
 
     const _SendEmail = await _SmtpService.sendMail(_EmailObject);
     return {
-      Message: `Important Information Has Sent Successfully from ${_SendEmail.envelope.from} To ${_SendEmail.envelope.to} Please Check Your Email!`,
-      Data: _SendEmail.messageId,
+      Message: `Email has sent successfuly one of our team member will contact you shortly`,
+      Data: true,
       Result: _SendEmail.response,
     };
   } catch (error) {

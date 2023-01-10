@@ -47,6 +47,9 @@
       </div>
     </div>
     <div class="contact-info-form"> <span class="circle one"></span> <span class="circle two"></span>
+      <div class="alert alert-light mt-5" role="alert" *ngIf="showResponse">
+        {{responseMessage}}
+      </div>
       <form [formGroup]="formModel" (ngSubmit)="submitForm()">
         <h3 class="title">Contact us</h3>
         <div class="social-input-containers">
@@ -117,7 +120,12 @@
             </span>
           </div>
         </span>
-        <input type="submit" [disabled]="formModel.pristine || formModel.invalid" class="btn btn-outline-light w-100" />
+        <button type="submit" class="btn btn-outline-light w-100" [disabled]="formModel.pristine || formModel.invalid">
+          Submit Form 
+          <div class="spinner-border" role="status" *ngIf="showSpinner">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+      </button>
       </form>
     </div>
   </div>

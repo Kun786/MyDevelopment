@@ -433,6 +433,9 @@
 
 
             <div class=" formCol-2 col-md-6">
+                <div class="alert alert-custom mt-5" role="alert" *ngIf="showResponse">
+                    {{responseMessage}}
+                  </div>
                 <form [formGroup]="formModel" (ngSubmit)="submitForm()">
                     <div class="row">
                         <div class="col-md-6 py-3">
@@ -461,7 +464,7 @@
                                     <span *ngIf="(formModel.controls['phone'].errors.pattern)">
                                         Phone Number should be numeric</span>
                                         <span *ngIf="formModel.controls['phone'].errors.minlength || formModel.controls['phone'].errors.maxlength ">
-                                            <small>Phone number must be at least 10 numbers</small></span>
+                                            <small>Phone number must be at least 11 numbers</small></span>
                                     <span *ngIf="formModel.controls['phone'].errors.required">
                                         <small>Field Required!</small>
                                     </span>
@@ -521,7 +524,12 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn  my-3  text-white btn-submit" [disabled]="formModel.pristine || formModel.invalid">Submit Form </button>
+                    <button type="submit" class="btn  my-3  text-white btn-submit" [disabled]="formModel.pristine || formModel.invalid">
+                        Submit Form 
+                        <div class="spinner-border" role="status" *ngIf="showSpinner">
+                            <span class="visually-hidden">Loading...</span>
+                          </div>
+                    </button>
                 </form>
             </div>
         </div>

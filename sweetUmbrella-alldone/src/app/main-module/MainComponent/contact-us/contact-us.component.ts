@@ -11,6 +11,9 @@ import { ClientFormService } from 'src/app/shared/services/client-form.service';
 export class ContactUsComponent implements OnInit {
 
   public formModel: FormGroup | any;
+  public showResponse: boolean = false;
+  public showSpinner: boolean = false;
+  public responseMessage: any;
 
   constructor(
     private _ActivatedRoute:ActivatedRoute, 
@@ -31,7 +34,7 @@ export class ContactUsComponent implements OnInit {
     this.formModel = this.FormBuilder.group({
       firstName: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z ]*$/)]),
       countrycode: new FormControl('+44'),
-      phone: new FormControl('', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(10)]),
+      phone: new FormControl('', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(11), Validators.maxLength(11)]),
       emailAddress: new FormControl('', [Validators.required, Validators.email]),
       subject: new FormControl('', [Validators.required, Validators.maxLength(20)]),
       message: new FormControl('', [Validators.required, Validators.maxLength(500)])
@@ -39,8 +42,18 @@ export class ContactUsComponent implements OnInit {
   }
 
   public submitForm() {
+    this.showSpinner = true;
     const formValues = this.formModel.value;
     formValues.phone = formValues.countrycode+formValues.phone;
+    this.ClientFormService.submitClientQuery(formValues).subscribe((response:any) => {
+        this.showResponse = true;
+        this.showSpinner = false;
+        this.responseMessage = response.message;
+    })
+    this.formModel.reset();
+    setTimeout(() => {
+      this.showResponse = false;
+    }, 5000);
   }
 
 

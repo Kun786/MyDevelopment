@@ -34,4 +34,8 @@ a {
     width: 25px;
     height: 25px;
   }
+
+  .alert-custom{
+    background-color: rgb(233, 116, 81);
+  }
     /* input validation code */
