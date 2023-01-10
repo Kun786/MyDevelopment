@@ -1,33 +1,31 @@
 const nodemailer = require("nodemailer");
 
-const SendEmailUsingNodeMailer = async (payLoad) => {
+const senEmail = async (payLoad) => {
   try {
+    console.log(process.env.APPPASSWORDFOREMAIL)
     // Generate test SMTP service account from ethereal.email
     // Only needed if you don't have a real mail account for testing
     // create reusable transporter object using the default SMTP transport
-    payLoad
     const _SmtpService = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: 'hello@sweetumbrella.co.uk', // generated ethereal user
-        pass: 'Jrj3@gqpq', // generated ethereal password
+        pass: process.env.APPPASSWORDFOREMAIL, // generated ethereal password
       },
     });
     //Email Object
-
+    payLoad
     const _EmailObject = {
-      from: payLoad.email, // sender address
-      to: _Email, // list of receivers
-      subject: "Skillstitute", // Subject linea
+      from: payLoad.emailAddress, // sender address
+      to: 'hello@sweetumbrella.co.uk', // list of receivers
+      subject: payLoad.subject, // Subject linea
       html: `<b>
-      <h3>UserId: ${_CredentialsObject.UserId}</h3>
-      <h3>UserId: ${_CredentialsObject.Token}</h3>
+      <h3>UserEmail: ${payLoad.emailAddress}</h3>
+      <h3>UserMessage: ${payLoad.message}</h3>
       <br>
       <br>
       <br>
       <h5>Note: This is One Time Link and will Expire in 5 minute You cannot Use it Once it Expired</h5>
-      <a href="${_Link}">Click Me</a>
-  
       </b>`, // html body
     };
 
@@ -50,4 +48,4 @@ const SendEmailUsingNodeMailer = async (payLoad) => {
 
 }
 
-module.exports = { SendEmailUsingNodeMailer };
+module.exports = { senEmail };

@@ -36,6 +36,9 @@ export class HomeComponent implements OnInit {
   public submitForm() {
     const formValues = this.formModel.value;
     formValues.phone = formValues.countrycode+formValues.phone;
+    this.ClientFormService.submitClientQuery(formValues).subscribe((response:any) => {
+      console.log(response);
+    })
   }
 
 }
