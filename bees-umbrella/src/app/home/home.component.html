@@ -1,5 +1,31 @@
-<section id="one" #One ></section>
-<section id="two"></section>
+<section id="one" #One >
+    <button type="button" class="btn btn-outline-primary" (click)="runToaster()">Primary</button>
+</section>
+<section id="two">
+
+    <canvas baseChart class="chart"
+        [data]="lineChartData"
+        [options]="lineChartOptions"
+        [type]="lineChartType"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)"></canvas>
+<table>
+<tr>
+<th *ngFor="let label of lineChartData.labels">{{label}}</th>
+</tr>
+<tr *ngFor="let d of lineChartData.datasets; let i=index" [class]="'line-'+i">
+<td *ngFor="let label of lineChartData.labels; let j=index">{{d && d.data[j]}}</td>
+</tr>
+</table>
+<div class="button-row">
+<button mat-button mat-raised-button color="primary" (click)="randomize()">Randomize</button>
+<button mat-button mat-raised-button color="primary" (click)="pushOne()">Push</button>
+<button mat-button mat-raised-button color="primary" (click)="changeColor()">Recolor</button>
+<button mat-button mat-raised-button color="primary" (click)="hideOne()">Toggle Series B</button>
+<button mat-button mat-raised-button color="primary" (click)="changeLabel()">Change Label</button>
+</div>
+
+</section>
 <section id="three"></section>
 <section id="four"></section>
 <section id="five"></section>
