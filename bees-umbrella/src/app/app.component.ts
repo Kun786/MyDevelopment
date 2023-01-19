@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
-import { backgroundColors } from './Shared/background-colors-enum';
+import { backgroundColors, COLOR } from './Shared/background-colors-enum';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   @ViewChild('Three') Three:ElementRef | any;
   @ViewChild('Four') Four:ElementRef | any;
   public backgroundColor: string = '';
+  public color:string = '';
   @HostListener('window:scroll') onWindowScroll() {
     const scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     const max = document.documentElement.clientHeight;
@@ -25,17 +26,19 @@ export class AppComponent implements OnInit {
     // }
     if(scroll === 0){
       this.backgroundColor = backgroundColors.One;
+      this.color = COLOR.One;
     }
-    if (scroll > 500) {
+    if (scroll > 800) {
       this.backgroundColor = backgroundColors.Two;
+      this.color = COLOR.Two;
     }
-    if (scroll > 1500) {
+    if (scroll > 1600) {
       this.backgroundColor = backgroundColors.Three;
     }
-    if (scroll > 2500) {
+    if (scroll > 2400) {
       this.backgroundColor = backgroundColors.Four;
     }
-    if (scroll > 3500) {
+    if (scroll > 3000) {
       this.backgroundColor = backgroundColors.Five;
     }
   }

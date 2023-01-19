@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 
   public formInitialization() {
     this.formModel = this.FormBuilder.group({
-      firstName: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z ]*$/)]),
+    firstName: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z ]*$/)]),
       countrycode: new FormControl('+44'),
       phone: new FormControl('', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(11), Validators.maxLength(11)]),
       emailAddress: new FormControl('', [Validators.required, Validators.email]),
