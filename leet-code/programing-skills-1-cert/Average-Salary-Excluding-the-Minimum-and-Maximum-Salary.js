@@ -8,7 +8,7 @@
 
 // Method 1 using sorting
 
-let salary = [1000,2000,3000];
+let salary = [1000, 2000, 3000];
 salary.sort((a, b) => a - b); //sort array in ascending order
 let maximum1 = salary.pop(); // remove the last (maximum) value
 let minimum2 = salary.shift(); // remove the first (maxium) value
@@ -51,5 +51,12 @@ salary.forEach(elements => {
     n++;
 })
 let result = averageSalary / n;
+
+//Simplified Verions
+// salary.sort((a, b) => a - b);
+//   salary.pop();
+//   salary.shift();
+//   return salary.reduce((acc, cur) => acc + cur, 0) / salary.length;
+//Simplified Verions
 console.log(result);
 //Once we found out the maximum and minimum we can easily calculate the average lets code!!!
